@@ -1,0 +1,353 @@
+[
+    {
+        "id": "1",
+        "title": "Striver's A2Z DSA Course",
+        "description": "A well-structured DSA course with curated problems covering all topics.",
+        "image": "https://images.unsplash.com/photo-1718563552473-2d97b224e801?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8",
+        "url": "https://takeuforward.org/strivers-a2z-dsa-course/",
+        "group": "DSA Learning",
+        "tags": [
+            "DSA",
+            "Coding",
+            "Algorithms"
+        ],
+        "source": "takeuforward.org"
+    },
+    {
+        "id": "2",
+        "title": "React Documentation",
+        "description": "Official documentation for React.js, a JavaScript library for building user interfaces.",
+        "image": "https://reactjs.org/logo-og.png",
+        "url": "https://react.dev/",
+        "group": "Frontend Development",
+        "tags": [
+            "React",
+            "JavaScript",
+            "Web Development"
+        ],
+        "source": "react.dev"
+    },
+    {
+        "id": "3",
+        "title": "MDN Web Docs",
+        "description": "Comprehensive documentation for HTML, CSS, and JavaScript with interactive examples.",
+        "image": "https://developer.mozilla.org/mdn-social-share.png",
+        "url": "https://developer.mozilla.org/en-US/",
+        "group": "Web Development",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Docs"
+        ],
+        "source": "developer.mozilla.org"
+    },
+    {
+        "id": "4",
+        "title": "Spring Boot Documentation",
+        "description": "Guides and reference documentation for Spring Boot, a Java framework for microservices.",
+        "image": "https://spring.io/img/spring.svg",
+        "url": "https://docs.spring.io/spring-boot/docs/current/reference/html/",
+        "group": "Backend Development",
+        "tags": [
+            "Spring Boot",
+            "Java",
+            "Microservices"
+        ],
+        "source": "docs.spring.io"
+    },
+    {
+        "id": "5",
+        "title": "Python Crash Course",
+        "description": "A beginner-friendly book covering Python fundamentals and real-world projects.",
+        "image": "https://images.unsplash.com/photo-1735656244034-6b2b53d2657d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzNnx8fGVufDB8fHx8fA%3D%3D",
+        "url": "https://nostarch.com/python-crash-course-3rd-edition",
+        "group": "Programming Books",
+        "tags": [
+            "Python",
+            "Programming",
+            "Books"
+        ],
+        "source": "nostarch.com"
+    },
+    {
+        "id": "6",
+        "title": "JavaScript Info",
+        "description": "Modern JavaScript tutorials with deep explanations and examples.",
+        "image": "https://javascript.info/img/logo.png",
+        "url": "https://javascript.info/",
+        "group": "Web Development",
+        "tags": [
+            "JavaScript",
+            "Tutorial",
+            "Programming"
+        ],
+        "source": "javascript.info"
+    },
+    {
+        "id": "7",
+        "title": "LeetCode",
+        "description": "Platform to enhance your coding skills with DSA problems.",
+        "image": "https://leetcode.com/static/images/LeetCode_logo_rvs.png",
+        "url": "https://leetcode.com/",
+        "group": "DSA Practice",
+        "tags": [
+            "DSA",
+            "LeetCode",
+            "Coding"
+        ],
+        "source": "leetcode.com"
+    },
+    {
+        "id": "8",
+        "title": "Next.js Documentation",
+        "description": "Learn about the powerful features of Next.js framework.",
+        "image": "https://nextjs.org/static/twitter-cards/home.jpg",
+        "url": "https://nextjs.org/docs",
+        "group": "Frontend Development",
+        "tags": [
+            "Next.js",
+            "React",
+            "SSR"
+        ],
+        "source": "nextjs.org"
+    },
+    {
+        "id": "9",
+        "title": "Node.js Docs",
+        "description": "Official documentation for Node.js server-side JavaScript.",
+        "image": "https://nodejs.org/static/images/logo.svg",
+        "url": "https://nodejs.org/en/docs/",
+        "group": "Backend Development",
+        "tags": [
+            "Node.js",
+            "JavaScript",
+            "Backend"
+        ],
+        "source": "nodejs.org"
+    },
+    {
+        "id": "10",
+        "title": "CS50 - Introduction to Computer Science",
+        "description": "Harvard's legendary intro course to Computer Science.",
+        "image": "https://cs50.harvard.edu/images/cs50.png",
+        "url": "https://cs50.harvard.edu/",
+        "group": "CS Fundamentals",
+        "tags": [
+            "CS",
+            "Harvard",
+            "Course"
+        ],
+        "source": "cs50.harvard.edu"
+    },
+    {
+        "id": "11",
+        "title": "GeeksforGeeks",
+        "description": "Popular portal for interview prep and computer science concepts.",
+        "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo.png",
+        "url": "https://geeksforgeeks.org/",
+        "group": "DSA Learning",
+        "tags": [
+            "DSA",
+            "Prep",
+            "CS"
+        ],
+        "source": "geeksforgeeks.org"
+    },
+    {
+        "id": "12",
+        "title": "Clean Code Book",
+        "description": "A Handbook of Agile Software Craftsmanship by Robert C. Martin.",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/41SH-SvWPxL._SX374_BO1,204,203,200_.jpg",
+        "url": "https://www.oreilly.com/library/view/clean-code/9780136083238/",
+        "group": "Programming Books",
+        "tags": [
+            "Books",
+            "Clean Code",
+            "Craftsmanship"
+        ],
+        "source": "oreilly.com"
+    },
+    {
+        "id": "13",
+        "title": "System Design Primer",
+        "description": "A curated repo to learn system design with examples and strategies.",
+        "image": "https://avatars.githubusercontent.com/u/69767?s=200&v=4",
+        "url": "https://github.com/donnemartin/system-design-primer",
+        "group": "System Design",
+        "tags": [
+            "System Design",
+            "Architecture",
+            "GitHub"
+        ],
+        "source": "github.com"
+    },
+    {
+        "id": "14",
+        "title": "Frontend Mentor",
+        "description": "Improve your frontend skills by building real projects.",
+        "image": "https://www.frontendmentor.io/static/images/logo-desktop.svg",
+        "url": "https://frontendmentor.io/",
+        "group": "Frontend Practice",
+        "tags": [
+            "HTML",
+            "CSS",
+            "Practice"
+        ],
+        "source": "frontendmentor.io"
+    },
+    {
+        "id": "15",
+        "title": "Docker Documentation",
+        "description": "Official Docker docs to learn containerization.",
+        "image": "https://www.docker.com/wp-content/uploads/2022/03/horizontal-logo-monochromatic-white.png",
+        "url": "https://docs.docker.com/",
+        "group": "DevOps",
+        "tags": [
+            "Docker",
+            "Containers",
+            "Deployment"
+        ],
+        "source": "docs.docker.com"
+    },
+    {
+        "id": "16",
+        "title": "TypeScript Handbook",
+        "description": "Comprehensive guide to TypeScript from Microsoft.",
+        "image": "https://www.typescriptlang.org/images/branding/logo-grouping.svg",
+        "url": "https://www.typescriptlang.org/docs/",
+        "group": "Frontend Development",
+        "tags": [
+            "TypeScript",
+            "JS",
+            "Typed"
+        ],
+        "source": "typescriptlang.org"
+    },
+    {
+        "id": "17",
+        "title": "Rust Lang Book",
+        "description": "The official Rust programming language book.",
+        "image": "https://www.rust-lang.org/static/images/rust-logo-blk.svg",
+        "url": "https://doc.rust-lang.org/book/",
+        "group": "Programming Languages",
+        "tags": [
+            "Rust",
+            "Systems",
+            "Book"
+        ],
+        "source": "doc.rust-lang.org"
+    },
+    {
+        "id": "18",
+        "title": "Kubernetes Docs",
+        "description": "Official documentation for Kubernetes container orchestration.",
+        "image": "https://kubernetes.io/images/kubernetes-horizontal-color.png",
+        "url": "https://kubernetes.io/docs/",
+        "group": "DevOps",
+        "tags": [
+            "Kubernetes",
+            "Containers",
+            "Cloud"
+        ],
+        "source": "kubernetes.io"
+    },
+    {
+        "id": "19",
+        "title": "Crio.do - Learning Platform",
+        "description": "Project-based learning for backend, frontend and fullstack devs.",
+        "image": "https://www.crio.do/static/images/logo.svg",
+        "url": "https://www.crio.do/",
+        "group": "Learning Platforms",
+        "tags": [
+            "Fullstack",
+            "Projects",
+            "Backend"
+        ],
+        "source": "crio.do"
+    },
+    {
+        "id": "20",
+        "title": "freeCodeCamp",
+        "description": "Learn to code for free with hands-on projects.",
+        "image": "https://www.freecodecamp.org/news/content/images/2021/07/fcc_primary_large.png",
+        "url": "https://www.freecodecamp.org/",
+        "group": "Learning Platforms",
+        "tags": [
+            "Web Dev",
+            "Coding",
+            "Free"
+        ],
+        "source": "freecodecamp.org"
+    },
+    {
+        "id": "21",
+        "title": "Redux Toolkit Docs",
+        "description": "Official docs for modern Redux usage with Toolkit.",
+        "image": "https://redux-toolkit.js.org/favicon.ico",
+        "url": "https://redux-toolkit.js.org/",
+        "group": "State Management",
+        "tags": [
+            "Redux",
+            "React",
+            "State"
+        ],
+        "source": "redux-toolkit.js.org"
+    },
+    {
+        "id": "22",
+        "title": "Tailwind CSS Docs",
+        "description": "Official Tailwind CSS documentation and utilities.",
+        "image": "https://tailwindcss.com/favicons/favicon-32x32.png",
+        "url": "https://tailwindcss.com/docs",
+        "group": "Frontend Development",
+        "tags": [
+            "Tailwind",
+            "CSS",
+            "Styling"
+        ],
+        "source": "tailwindcss.com"
+    },
+    {
+        "id": "23",
+        "title": "Postman Learning Center",
+        "description": "Documentation and learning hub for API testing with Postman.",
+        "image": "https://www.postman.com/assets/logos/postman-logo-stacked.svg",
+        "url": "https://learning.postman.com/",
+        "group": "API Testing",
+        "tags": [
+            "Postman",
+            "API",
+            "Testing"
+        ],
+        "source": "learning.postman.com"
+    },
+    {
+        "id": "24",
+        "title": "Real Python",
+        "description": "Python tutorials, tips, and tricks for developers.",
+        "image": "https://files.realpython.com/media/Real_Python_General_Social.dede19c3673b.jpg",
+        "url": "https://realpython.com/",
+        "group": "Python Learning",
+        "tags": [
+            "Python",
+            "Tutorials",
+            "Learning"
+        ],
+        "source": "realpython.com"
+    },
+    {
+        "id": "25",
+        "title": "GitHub Docs",
+        "description": "Guides and help for GitHub, repositories, and workflows.",
+        "image": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+        "url": "https://docs.github.com/en",
+        "group": "Version Control",
+        "tags": [
+            "Git",
+            "GitHub",
+            "CI/CD"
+        ],
+        "source": "docs.github.com"
+    }
+]
