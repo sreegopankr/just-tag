@@ -7,6 +7,7 @@ import { FaRegEdit, FaRegTrashAlt, FaArrowLeft, FaExpand, FaEdit, FaEye } from '
 import BottomNavbar from '@/components/BottomNavbar';
 import { MdArrowOutward, MdDelete, MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowRight, MdClose } from 'react-icons/md';
 import { FiArrowLeft } from 'react-icons/fi';
+import { useRef } from 'react';
 
 export default function BookmarkDetailPage() {
   const params = useParams();
@@ -20,12 +21,15 @@ export default function BookmarkDetailPage() {
   const [deleteModal, setDeleteModal] = useState(false);
   // Edit form state
   const [editGroup, setEditGroup] = useState('');
+  const [editGroupInput, setEditGroupInput] = useState('');
+  const [showEditGroupDropdown, setShowEditGroupDropdown] = useState(false);
+  const editGroupDropdownRef = useRef<HTMLDivElement>(null);
   const [editTags, setEditTags] = useState<string[]>([]);
   const [editTagInput, setEditTagInput] = useState('');
   const [editUrl, setEditUrl] = useState('');
   const [groups, setGroups] = useState<string[]>([]);
 
-  
+
 
   useEffect(() => {
     const allBookmarks = StorageService.getBookmarks();
@@ -39,8 +43,28 @@ export default function BookmarkDetailPage() {
     }
   }, [bookmarkId, editOpen]);
 
+  useEffect(() => {
+    // ... existing code ...
+    function handleClickOutside(event: MouseEvent) {
+      if (editGroupDropdownRef.current && !editGroupDropdownRef.current.contains(event.target as Node)) {
+        setShowEditGroupDropdown(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   if (!bookmark) {
     return <div className="min-h-screen flex items-center justify-center text-gray-400">Bookmark not found.</div>;
+  }
+
+  function handleAddEditGroup() {
+    if (editGroupInput.trim() && !groups.includes(editGroupInput.trim())) {
+      setGroups([editGroupInput.trim(), ...groups]);
+      setEditGroup(editGroupInput.trim());
+      setEditGroupInput('');
+      setShowEditGroupDropdown(false);
+    }
   }
 
   function handleEditTagInput(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -79,7 +103,7 @@ export default function BookmarkDetailPage() {
         <button onClick={() => router.back()} className="p-2"><FiArrowLeft className="text-xl" /></button>
         <span className="font-semibold text-lg">&nbsp;</span>
         <button
-            onClick={() => window.open(bookmark.url, '_blank', 'noopener,noreferrer')} 
+          onClick={() => window.open(bookmark.url, '_blank', 'noopener,noreferrer')}
           className="py-1 px-2 rounded-xl text-white bg-[color:var(--primary)]  flex gap-2 justify-center items-center">Open URL<MdArrowOutward className='text-lg' /></button>
       </div>
       <div className="flex justify-center items-center px-4">
@@ -87,7 +111,7 @@ export default function BookmarkDetailPage() {
       </div>
       <div className="flex justify-end gap-2 px-6 mt-2">
         <button className="bg-gray-100 hover:bg-gray-200 rounded-md p-2 shadow-md" onClick={() => setEditOpen(true)}><FaEdit className="text-xl text-gray-600" /></button>
-        <button className="bg-gray-100 hover:bg-gray-200 rounded-md p-2 shadow-md" onClick={() => setDeleteModal(true)}><MdDelete className="text-xl text-gray-600"/></button>
+        <button className="bg-gray-100 hover:bg-gray-200 rounded-md p-2 shadow-md" onClick={() => setDeleteModal(true)}><MdDelete className="text-xl text-gray-600" /></button>
       </div>
       <div className="px-6 mt-4">
         <div className="font-semibold text-lg mb-1">{bookmark.title}</div>
@@ -104,7 +128,7 @@ export default function BookmarkDetailPage() {
         <div className="border-t border-gray-200">
           <button className="w-full flex justify-between items-center py-3" onClick={() => setShowTags(v => !v)}>
             <span className="font-medium">Tags</span>
-            <span className="text-gray-400">{showTags ?<MdOutlineKeyboardArrowDown className="text-xl" /> : <MdOutlineKeyboardArrowRight className="text-xl" />}</span>
+            <span className="text-gray-400">{showTags ? <MdOutlineKeyboardArrowDown className="text-xl" /> : <MdOutlineKeyboardArrowRight className="text-xl" />}</span>
           </button>
           {showTags && (
             <div className="flex flex-wrap gap-2 pb-3">
@@ -134,11 +158,40 @@ export default function BookmarkDetailPage() {
               </div>
             </div>
             <form className="flex flex-col gap-4" onSubmit={handleEditSubmit}>
-              <div>
+              <div className="w-full relative" ref={editGroupDropdownRef}>
                 <label className="block text-sm mb-1 font-medium">Collection</label>
-                <select value={editGroup} onChange={e => setEditGroup(e.target.value)} className="w-full rounded-lg border border-gray-200 px-3 py-2 bg-white">
-                  {groups.map(g => <option key={g} value={g}>{g}</option>)}
-                </select>
+                <div
+                  className="flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 cursor-pointer"
+                  onClick={() => setShowEditGroupDropdown(v => !v)}
+                >
+                  <span className="flex-1 text-gray-900">{editGroup}</span>
+                  <svg className="w-4 h-4 ml-2 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </div>
+                {showEditGroupDropdown && (
+                  <div className="absolute left-0 right-0 bg-white border border-gray-200 rounded-lg mt-1 z-10 max-h-48 overflow-y-auto shadow-lg">
+                    <input
+                      className="w-full px-3 py-2 border-b border-gray-100 focus:outline-none"
+                      placeholder="Search or add group"
+                      value={editGroupInput}
+                      onChange={e => setEditGroupInput(e.target.value)}
+                      onKeyDown={e => { if (e.key === 'Enter') { handleAddEditGroup(); e.preventDefault(); } }}
+                    />
+                    {editGroupInput.trim() && !groups.includes(editGroupInput.trim()) && (
+                      <div className="px-3 py-2 text-[color:var(--primary)] cursor-pointer hover:bg-gray-50" onClick={handleAddEditGroup}>
+                        + Add "{editGroupInput.trim()}"
+                      </div>
+                    )}
+                    {groups.filter(g => g.toLowerCase().includes(editGroupInput.toLowerCase())).map(g => (
+                      <div
+                        key={g}
+                        className="px-3 py-2 cursor-pointer hover:bg-gray-50"
+                        onClick={() => { setEditGroup(g); setShowEditGroupDropdown(false); }}
+                      >
+                        {g}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <div>
                 <label className="block text-sm mb-1 font-medium">Tags</label>
@@ -155,7 +208,25 @@ export default function BookmarkDetailPage() {
                     value={editTagInput}
                     onChange={e => setEditTagInput(e.target.value)}
                     onKeyDown={handleEditTagInput}
+                    onBlur={() => {
+                      if (editTagInput.trim()) {
+                        const newTag = editTagInput.trim().replace(/^#/, '');
+                        if (newTag && !editTags.includes(newTag)) {
+                          setEditTags([...editTags, newTag]);
+                        }
+                        setEditTagInput('');
+                      }
+                    }}
                   />
+                  <button type="button" onClick={() => {
+                    if (editTagInput.trim()) {
+                      const newTag = editTagInput.trim().replace(/^#/, '');
+                      if (newTag && !editTags.includes(newTag)) {
+                        setEditTags([...editTags, newTag]);
+                      }
+                      setEditTagInput('');
+                    }
+                  }}>+</button>
                 </div>
               </div>
               <div>

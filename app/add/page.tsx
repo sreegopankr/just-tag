@@ -93,9 +93,10 @@ export default function AddPage() {
       <header className="py-6 text-center font-bold text-lg bg-white shadow-sm mb-2">Add</header>
       <form className="flex flex-col items-center px-4 pt-4 gap-6 flex-1" onSubmit={handleSubmit}>
         <div className="w-full">
-          <label className="block text-sm mb-1 font-medium">URL</label>
+          <label htmlFor='url' className="block text-sm mb-1 font-medium">URL</label>
           <input
             type="url"
+            id='url'
             className="w-full rounded-lg border border-gray-200 px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]"
             placeholder="Paste or type a URL"
             value={url}
@@ -116,6 +117,7 @@ export default function AddPage() {
           {showGroupDropdown && (
             <div className="absolute left-0 right-0 bg-white border border-gray-200 rounded-lg mt-1 z-10 max-h-48 overflow-y-auto shadow-lg">
               <input
+                type="text"
                 className="w-full px-3 py-2 border-b border-gray-100 focus:outline-none"
                 placeholder="Search or add group"
                 value={groupInput}
@@ -140,8 +142,8 @@ export default function AddPage() {
           )}
         </div>
         <div className="w-full">
-          <label className="block text-sm mb-1 font-medium">Tags</label>
-          <div className="flex flex-wrap items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2">
+          <label htmlFor='tags' className="block text-sm mb-1 font-medium">Tags</label>
+          <div className="flex flex-wrap items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 ">
             {tags.map(tag => (
               <span key={tag} className="bg-[color:var(--primary)] text-white px-2 py-1 rounded-full text-xs flex items-center gap-1">
                 #{tag}
@@ -149,7 +151,8 @@ export default function AddPage() {
               </span>
             ))}
             <input
-              className="flex-1 min-w-[80px] border-none outline-none bg-transparent text-sm"
+              id='tags'
+              className="flex-1 min-w-[80px] border-none outline-none bg-transparent text-sm "
               placeholder="Add tags..."
               value={tagInput}
               onChange={e => setTagInput(e.target.value)}
@@ -160,8 +163,8 @@ export default function AddPage() {
         </div>
         {error && <div className="text-red-500 text-sm w-full text-center">{error}</div>}
         <div className="flex gap-4 w-full justify-center mt-4">
-          <button type="submit" className="flex-1 bg-[color:var(--primary)] text-white rounded-lg py-3 font-semibold text-base active:bg-[color:var(--primary-dark)] transition" disabled={loading}>{loading ? 'Adding...' : 'Add'}</button>
-          <button type="button" className="flex-1 bg-gray-800 text-white rounded-lg py-3 font-semibold text-base" onClick={() => router.push('/private')} disabled={loading}>Cancel</button>
+          <button type="submit" className="flex-1 bg-[color:var(--primary)] text-white rounded-2xl py-3 font-semibold text-base active:bg-[color:var(--primary-dark)] transition" disabled={loading}>{loading ? 'Adding...' : 'Add'}</button>
+          <button type="button" className="flex-1 bg-gray-800 text-white rounded-2xl py-3 font-semibold text-base" onClick={() => router.push('/private')} disabled={loading}>Cancel</button>
         </div>
       </form>
       <BottomNavbar />
